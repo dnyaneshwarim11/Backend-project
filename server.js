@@ -22,6 +22,10 @@ mongoose.connect('mongodb://localhost:27017/3dprinting', {
 app.use('/api/auth', authRoutes);  // Use auth routes
 const materialRoutes = require('./routes/material'); // Assuming this is where the POST route is defined
 app.use('/api/material', materialRoutes);
+app.get("/", (req, res) => {
+  res.send("Backend is running!");
+});
+
 // Start server
 const PORT = 5000;
 app.listen(PORT, () => {
